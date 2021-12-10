@@ -46,7 +46,7 @@ export default {
         axios
             .get("https://flynn.boolean.careers/exercises/api/array/music")
             .then((res) => {
-                let discs = {};
+                // let discs = {}; già esite
                 this.discs = res.data.response;
 
                 this.discs.forEach((disc) => {
@@ -54,7 +54,7 @@ export default {
                         this.genres.push(disc.genre);
                     }
 
-                    if (!this.authors.includes(discs.author)) {
+                    if (!this.authors.includes(disc.author)) {  //disc non discs
                         this.authors.push(disc.author);
                     }
                 });

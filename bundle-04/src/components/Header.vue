@@ -4,9 +4,10 @@
             <img src="../assets/img/spotify-logo.png" alt="Spotify" />
         </div>
         <div>
+            <!-- Genre non Genere (riga 10) -->
             <select
                 v-model="genreFilter"
-                @change="$emit('changedGenere', genreFilter)"
+                @change="$emit('changedGenre', genreFilter)" 
                 class="form-select mt-3"
             >
                 <option value="">Seleziona un genere</option>
@@ -31,7 +32,7 @@
                     :key="index"
                     :value="author"
                 >
-                    {{ genre }}
+                     {{ author }} <!-- author non genre  -->
                 </option>
             </select>
 

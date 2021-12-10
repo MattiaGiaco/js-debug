@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <Header :genres="genresList" :authors="authorsList" @changedGenre="startGenreSearch" @chaangedAuthor="startAuthorSearch" />
+        <Header :genres="genresList" :authors="authorsList" @changedGenre="startGenreSearch" @changedAuthor="startAuthorSearch" />
+        <!-- change scritto male -->
 
         <Main :selectedGenre="genreToSearch" :selectedAuthor="authorToSearch" @genresAndAuthorsReady="getGenresAndAuthorsList" />
     </div>
@@ -26,13 +27,13 @@ export default {
     },
     methods: {
         getGenresAndAuthorsList(allGenresAndAuthors) {
-            allGenresAndAuthors = {};
+            // allGenresAndAuthors = {}; non va resettato
             this.genresList = allGenresAndAuthors.genres;
             this.authorsList = allGenresAndAuthors.authors;
         },
         startGenreSearch(genreToSearch) {
             console.log(genreToSearch);
-            genreToSearch = "";
+            // genreToSearch = ""; non va resettato
             this.genreToSearch = genreToSearch;
         },
         startAuthorSearch(authorToSearch) {
